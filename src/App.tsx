@@ -1,9 +1,9 @@
-import { Products } from "./Components/Products";
+import { UseProps } from "./Components/simple/UseProps";
 
 export const App = () => {
    return (
       <div>
-         <Products />
+         <UseProps />
       </div>
    );
 };
