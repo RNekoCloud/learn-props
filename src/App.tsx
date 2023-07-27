@@ -1,10 +1,10 @@
-import { UseList } from "./Components/middle/UseList";
+import { UseTask } from "./Components/Todo/UseTask";
 import "./App.css";
 
 export const App = () => {
    return (
       <div>
-         <UseList />
+         <UseTask />
       </div>
    );
 };
