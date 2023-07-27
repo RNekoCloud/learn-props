@@ -1,10 +1,10 @@
-import { UseItems } from "./Components/middle/Item/UseItem";
+import { UseItem } from "./Components/simple/Object/UseItem";
 import "./App.css";
 
 export const App = () => {
    return (
       <div>
-         <UseItems />
+         <UseItem />
       </div>
    );
 };
