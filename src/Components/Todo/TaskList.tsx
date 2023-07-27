@@ -1,22 +1,18 @@
-import React from "react";
-import Task from "./Task";
+import Task, { MyTask } from "./Task";
 
-// Definisikan tipe data props untuk komponen TaskList
+//definikan properti yang akan diterima oleh Komponen TaskList
 interface TaskListProps {
-   tasks: Task[]; // prop tasks akan berisi array dari objek Task
-   onToggle: (taskId: number) => void; // prop onToggle akan menerima fungsi untuk menandai tugas sebagai selesai
+   tasks: Task[];
+   onToggle: (taskId: number) => void;
 }
-
 // Komponen TaskList
-const TaskList: React.FC<TaskListProps> = ({ tasks, onToggle }) => {
+export const TaskList = ({ tasks, onToggle }: TaskListProps) => {
    return (
       <div>
          <h2>Daftar Tugas</h2>
          {tasks.map((task) => (
-            <Task key={task.id} task={task} onToggle={onToggle} />
+            <MyTask key={task.id} task={task} onToggle={onToggle} />
          ))}
       </div>
    );
 };
-
-export default TaskList;

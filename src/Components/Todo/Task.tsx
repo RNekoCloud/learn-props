@@ -1,20 +1,21 @@
-import React from "react";
-
-// Definisikan tipe data untuk tugas
+//definisikan tipe data untuk mengatur property yang akan diterima oleh komponen
 interface Task {
    id: number;
    title: string;
    completed: boolean;
 }
 
-// Definisikan tipe data props untuk komponen Task
+//export interface diatas agar dapat digunakan di lain tempat
+export default Task;
+
+//gunakan interface yang dibuat sebelumnya sehingga kita nanti akan memanggilnya sebagai object
 interface TaskProps {
-   task: Task; // prop task akan berisi data tugas
-   onToggle: (taskId: number) => void; // prop onToggle akan menerima fungsi untuk menandai tugas sebagai selesai
+   task: Task; //ini adalah interface yang dibuat sebelumn ya
+   onToggle: (taskId: number) => void; //Property yang akan digunakan untuk mengatur event
 }
 
-// Komponen Task
-const Task: React.FC<TaskProps> = ({ task, onToggle }) => {
+export const MyTask = ({ task, onToggle }: TaskProps) => {
+   //buat fungsi untuk melacak perubahan pada value input
    const handleToggle = () => {
       onToggle(task.id);
    };
@@ -27,12 +28,12 @@ const Task: React.FC<TaskProps> = ({ task, onToggle }) => {
             onChange={handleToggle}
          />
          <span
+            //tambahkan efek coretan ketika properti completed bernilai true
             style={{ textDecoration: task.completed ? "line-through" : "none" }}
          >
+            {/* jadikan isi tulisannya sama seperti di property title */}
             {task.title}
          </span>
       </div>
    );
 };
-
-export default Task;

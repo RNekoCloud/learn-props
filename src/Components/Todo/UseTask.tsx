@@ -1,21 +1,14 @@
-import React, { useState } from "react";
-import TaskList from "./TaskList";
+import { useState } from "react";
+import { TaskList } from "./TaskList";
+import Task from "./Task";
 
-interface Task {
-   id: number;
-   title: string;
-   completed: boolean;
-}
-
-export const UseTask: React.FC = () => {
-   const [tasks, setTasks] = useState<Task[]>([
-      { id: 1, title: "Belajar React", completed: false },
-      { id: 2, title: "Makan siang", completed: true },
-      { id: 3, title: "Bermain game", completed: false },
+export const UseTask = () => {
+   const [task, setTask] = useState<Task[]>([
+      { id: 1, title: "Belajar Js", completed: false },
    ]);
 
    const handleTaskToggle = (taskId: number) => {
-      setTasks((prevTasks) =>
+      setTask((prevTasks) =>
          prevTasks.map((task) =>
             task.id === taskId ? { ...task, completed: !task.completed } : task
          )
@@ -24,7 +17,7 @@ export const UseTask: React.FC = () => {
 
    return (
       <div>
-         <TaskList tasks={tasks} onToggle={handleTaskToggle} />
+         <TaskList tasks={task} onToggle={handleTaskToggle} />
       </div>
    );
 };
