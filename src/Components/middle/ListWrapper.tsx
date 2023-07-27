@@ -1,10 +1,12 @@
 import { List } from "./List";
 
+//buat property yang sama seperti sebelumnya
 interface ListProperty {
    title: string;
    description: string;
 }
 
+//jadikan sebagai
 interface SaveToArr {
    toArr: ListProperty[];
 }
