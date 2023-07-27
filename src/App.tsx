@@ -1,10 +1,10 @@
-import { UseProps } from "./Components/simple/UseProps";
+import { UseList } from "./Components/middle/UseList";
 import "./App.css";
 
 export const App = () => {
    return (
       <div>
-         <UseProps />
+         <UseList />
       </div>
    );
 };

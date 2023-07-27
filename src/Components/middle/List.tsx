@@ -4,11 +4,15 @@ interface ListProps {
    description: string;
 }
 
-export const List = ({ title, description }: ListProps) => {
+interface SaveList {
+   showList: ListProps;
+}
+
+export const List = ({ showList }: SaveList) => {
    return (
       <li>
-         <h1>{title}</h1>
-         <p>{description}</p>
+         <h1>{showList.title}</h1>
+         <p>{showList.description}</p>
       </li>
    );
 };
