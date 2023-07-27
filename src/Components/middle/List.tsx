@@ -4,6 +4,7 @@ interface ListProps {
    description: string;
 }
 
+//definisikan list sebagai objek
 interface SaveList {
    showList: ListProps;
 }
@@ -11,7 +12,9 @@ interface SaveList {
 export const List = ({ showList }: SaveList) => {
    return (
       <li>
+         {/* jadikan title menjadi Heading List */}
          <h1>{showList.title}</h1>
+         {/* jadikan decription menjadi paragraph */}
          <p>{showList.description}</p>
       </li>
    );
